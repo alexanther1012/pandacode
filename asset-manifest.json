@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/pandacode/static/css/main.ebe68115.chunk.css",
+    "main.js": "/pandacode/static/js/main.1db6b5a7.chunk.js",
+    "main.js.map": "/pandacode/static/js/main.1db6b5a7.chunk.js.map",
+    "runtime-main.js": "/pandacode/static/js/runtime-main.d28bdcef.js",
+    "runtime-main.js.map": "/pandacode/static/js/runtime-main.d28bdcef.js.map",
+    "static/js/2.3c7ccff6.chunk.js": "/pandacode/static/js/2.3c7ccff6.chunk.js",
+    "static/js/2.3c7ccff6.chunk.js.map": "/pandacode/static/js/2.3c7ccff6.chunk.js.map",
+    "index.html": "/pandacode/index.html",
+    "static/css/main.ebe68115.chunk.css.map": "/pandacode/static/css/main.ebe68115.chunk.css.map",
+    "static/js/2.3c7ccff6.chunk.js.LICENSE.txt": "/pandacode/static/js/2.3c7ccff6.chunk.js.LICENSE.txt",
+    "static/media/3millones.f6d271fc.jpg": "/pandacode/static/media/3millones.f6d271fc.jpg",
+    "static/media/mundo.d4d6a727.png": "/pandacode/static/media/mundo.d4d6a727.png",
+    "static/media/panda.a41ea9ed.png": "/pandacode/static/media/panda.a41ea9ed.png",
+    "static/media/todotodo.f3b58e1d.jpg": "/pandacode/static/media/todotodo.f3b58e1d.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d28bdcef.js",
+    "static/js/2.3c7ccff6.chunk.js",
+    "static/css/main.ebe68115.chunk.css",
+    "static/js/main.1db6b5a7.chunk.js"
+  ]
+}
