@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import moment from 'moment';
 
-const newDate = new Date();
-
 class Contador extends Component{
     constructor(props){
         super(props);
