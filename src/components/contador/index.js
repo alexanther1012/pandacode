@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import moment from 'moment';
 
 const newDate = new Date();
 
@@ -6,8 +7,8 @@ class Contador extends Component{
     constructor(props){
         super(props);
         this.state = {
-            fechaInicio1: new Date(2017, 2, 4),
-            fechaInicio2: new Date(2017, 7, 4),
+            fechaInicio1: moment('2017-02-04'),
+            fechaInicio2: moment('2017-07-04'),
             initial: "",
             calculos1: {
                 dias: 0,
@@ -24,6 +25,8 @@ class Contador extends Component{
         }
     }
 
+
+
     componentDidMount(){
         this.timer = setInterval(
             () => this.getClock(),
@@ -31,7 +34,7 @@ class Contador extends Component{
         );
         
         this.setState({
-            initial: this.getDateTime(newDate)
+            initial: this.getDateTime(moment())
         })
     }
 
@@ -40,48 +43,27 @@ class Contador extends Component{
     }
 
     getClock(){
-        let enddate = this.getDateTime(new Date(
-            newDate.getFullYear(),
-            newDate.getMonth() + 1,
-            newDate.getDate(),
-            newDate.getHours(),
-            newDate.getMinutes()
-        ));
+        let enddate = moment();
 
         this.setState({
             calculos1: {
                 dias: this.getDays(this.state.fechaInicio1, enddate),
-                horas: newDate.getHours(),
-                minutos: newDate.getMinutes(),
-                segundos: newDate.getSeconds()
+                horas: moment().hour(),
+                minutos: moment().minute(),
+                segundos: moment().second()
             },
             calculos2: {
                 dias: this.getDays(this.state.fechaInicio2, enddate),
-                horas: newDate.getHours(),
-                minutos: newDate.getMinutes(),
-                segundos: newDate.getSeconds()
+                horas: moment().hour(),
+                minutos: moment().minute(),
+                segundos: moment().second()
             }
         })
     }
 
-    getDays(date1, date2){
-        let startdate = Date.parse(date1);
-        let enddate = Date.parse(date2);
+    getDays = (startdate, enddate) => enddate.diff(startdate,"days");
 
-        let timediff = Math.floor(enddate - startdate);
-
-        return Math.floor(timediff / (1000 * 60 * 60 * 24))
-    }
-
-    getDateTime(date){
-        let year = date.getFullYear();
-        let month = date.getMonth();
-        let day = date.getDay();
-        let minute = date.getMinutes();
-        let hour = date.getHours();
-
-        return day + "/" + month + "/" + year + " " + hour + ":" + minute;
-    }
+    getDateTime = (date) => moment(date).date() + "/" +  moment(date).month() + "/" +  moment(date).year() + " " +  moment(date).hour() + ":" +  moment(date).minute();
 
     render(){
         return(

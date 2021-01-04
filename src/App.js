@@ -8,6 +8,7 @@ import './App.css';
 import Contador from './components/contador';
 
 const App = () => {
+  document.title = 'Panda Code';
 
   const fields = [];
 
@@ -23,7 +24,7 @@ const App = () => {
       <div className="App-intro">
         <p>Sabes, hay muchas cosas muy lindas en esta vida</p>
         <p>y la mayor de ellas comenzo hace casi</p>
-         <Contador tipo={1}/>
+        <Contador tipo={1}/>
         <p>paso uno de los mejores momentos de mi vida</p>
         <p>porque vi por primera ves a la persona que no me imagine</p>
         <p>nunca que seria la persona que le da sentido a mi vida</p>
@@ -39,7 +40,7 @@ const App = () => {
         <p>hace que este niño serio sea la persona mas feliz del <img style={{height: "2rem"}}src={mundo} className="App-logo" alt="logo" /></p>
         <br/>
         <p>Pero sabes algo mas, fui mucho mas feliz desde hace casi</p>
-         <Contador tipo={2}/>
+        <Contador tipo={2}/>
         <p>porque desde entonces mi vida cambio mucho mucho</p>
         <p>y mas porque pude decirle al mundo aunque aunque muchas</p>
         <p>muchas personas ya lo sabian pude decirle al mundo que</p>
