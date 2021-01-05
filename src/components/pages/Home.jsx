@@ -1,22 +1,25 @@
-import React from 'react';
-import logo from '../../img/panda.png';
-import mundo from '../../img/mundo.png';
-import tresmilloness from '../../img/3millones.jpg';
-import todotodo from '../../img/todotodo.jpg';
+import React, { Fragment } from "react";
+// import logo from "../../img/panda.png";
+// import mundo from "../../img/mundo.png";
+// import tresmilloness from "../../img/3millones.jpg";
+// import todotodo from "../../img/todotodo.jpg";
 
-import Contador from '../contador';
+// import Contador from "../contador";
 
-const Home = (props) => {
+const Home = () => {
   const fields = [];
 
   for (let i = 0; i <= 25; i++) {
     fields.push(<p>mucho mucho mucho mucho mucho mucho mucho</p>);
   }
   return (
-    <div className="App">
-      <div className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h2>Bienvenida pandita</h2>
+    <Fragment>
+      <section className="section section-top section-full">
+        <div className="bg-cover"></div>
+        <div className="bg-overlay"></div>
+      </section>
+      {/* <div className="App-header">
+        <h1 className="display-4 mb-2">Bienvenida pandita</h1>
       </div>
       <div className="App-intro">
         <p>Sabes, hay muchas cosas muy lindas en esta vida</p>
@@ -100,8 +103,9 @@ const Home = (props) => {
         <a href="#regresar">Da clic aqui para regresar....</a>
         <img style={{width: "100%"}} src={tresmilloness} alt="tresmillones"/>
       </div>
-    </div>
+     */}
+    </Fragment>
   );
-}
+};
 
 export default Home;
