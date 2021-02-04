@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/pandacode/static/css/main.d9fc113b.chunk.css",
-    "main.js": "/pandacode/static/js/main.4a1deb8c.chunk.js",
-    "main.js.map": "/pandacode/static/js/main.4a1deb8c.chunk.js.map",
+    "main.css": "/pandacode/static/css/main.e01d49cd.chunk.css",
+    "main.js": "/pandacode/static/js/main.01fb52d7.chunk.js",
+    "main.js.map": "/pandacode/static/js/main.01fb52d7.chunk.js.map",
     "runtime-main.js": "/pandacode/static/js/runtime-main.d28bdcef.js",
     "runtime-main.js.map": "/pandacode/static/js/runtime-main.d28bdcef.js.map",
-    "static/js/2.26a26c3a.chunk.js": "/pandacode/static/js/2.26a26c3a.chunk.js",
-    "static/js/2.26a26c3a.chunk.js.map": "/pandacode/static/js/2.26a26c3a.chunk.js.map",
+    "static/js/2.e567f884.chunk.js": "/pandacode/static/js/2.e567f884.chunk.js",
+    "static/js/2.e567f884.chunk.js.map": "/pandacode/static/js/2.e567f884.chunk.js.map",
     "index.html": "/pandacode/index.html",
-    "static/css/main.d9fc113b.chunk.css.map": "/pandacode/static/css/main.d9fc113b.chunk.css.map",
-    "static/js/2.26a26c3a.chunk.js.LICENSE.txt": "/pandacode/static/js/2.26a26c3a.chunk.js.LICENSE.txt",
+    "static/css/main.e01d49cd.chunk.css.map": "/pandacode/static/css/main.e01d49cd.chunk.css.map",
+    "static/js/2.e567f884.chunk.js.LICENSE.txt": "/pandacode/static/js/2.e567f884.chunk.js.LICENSE.txt",
     "static/media/panda.a41ea9ed.png": "/pandacode/static/media/panda.a41ea9ed.png"
   },
   "entrypoints": [
     "static/js/runtime-main.d28bdcef.js",
-    "static/js/2.26a26c3a.chunk.js",
-    "static/css/main.d9fc113b.chunk.css",
-    "static/js/main.4a1deb8c.chunk.js"
+    "static/js/2.e567f884.chunk.js",
+    "static/css/main.e01d49cd.chunk.css",
+    "static/js/main.01fb52d7.chunk.js"
   ]
 }
