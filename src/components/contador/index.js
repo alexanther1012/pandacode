@@ -44,7 +44,7 @@ const Contador = (props) => {
         );
       case "moments":
         return (
-          <p className="">{count.moments.toLocaleString() + " moments "}</p>
+          <p className="">{count.moments.toLocaleString() + " momentos"}</p>
         );
     }
   };
