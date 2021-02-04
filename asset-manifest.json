@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/pandacode/static/css/main.e01d49cd.chunk.css",
-    "main.js": "/pandacode/static/js/main.01fb52d7.chunk.js",
-    "main.js.map": "/pandacode/static/js/main.01fb52d7.chunk.js.map",
+    "main.js": "/pandacode/static/js/main.7e706bf7.chunk.js",
+    "main.js.map": "/pandacode/static/js/main.7e706bf7.chunk.js.map",
     "runtime-main.js": "/pandacode/static/js/runtime-main.d28bdcef.js",
     "runtime-main.js.map": "/pandacode/static/js/runtime-main.d28bdcef.js.map",
     "static/js/2.e567f884.chunk.js": "/pandacode/static/js/2.e567f884.chunk.js",
@@ -16,6 +16,6 @@
     "static/js/runtime-main.d28bdcef.js",
     "static/js/2.e567f884.chunk.js",
     "static/css/main.e01d49cd.chunk.css",
-    "static/js/main.01fb52d7.chunk.js"
+    "static/js/main.7e706bf7.chunk.js"
   ]
 }
