@@ -1,9 +1,12 @@
 import React, { Fragment, useState } from "react";
 import Button from "@mui/material/Button";
 import FloresAmarillas from "./FloresAmarillas";
+import WordByWordText from "../utilities/WordByWordText";
 
 const Home = () => {
   const [flowers, setFlowers] = useState(false);
+  const mensajito =
+    "Tal vez no sea algo muy grande, pero queria darte un pequeño detalle, y recordarte lo mucho que te amo. Tu eres esa persona que hace mis dias mas lindos y que dia tras dia haces que me enamore mas de ti. eres esa personita con la que quiero pasar dia tras dias hasta el fin de mi vida, hasta que seamos viejitos, y despues de esta vida tambien. Tu te mereces esto y mucho mucho mas pues eres una maravillosa persona, te admiro mucho y me haces feliz todos los dias. Gracias por estar a mi lado y ser esa maravillosa persona y por darme tanto amor.";
   const containerStyle = {
     position: "relative",
     height: 0,
@@ -48,6 +51,9 @@ const Home = () => {
           <div className="description">
             <span>Tengo un regalo muy especial para ti!!</span>
           </div>
+          {!flowers && (
+            <WordByWordText text={mensajito} delay={300} variant="h4" />
+          )}
           <Button
             variant="contained"
             color="primary"
