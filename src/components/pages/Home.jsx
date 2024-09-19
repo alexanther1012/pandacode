@@ -4,6 +4,22 @@ import FloresAmarillas from "./FloresAmarillas";
 
 const Home = () => {
   const [flowers, setFlowers] = useState(false);
+  const containerStyle = {
+    position: "relative",
+    height: 0,
+    overflow: "hidden",
+    paddingBottom: "56.25%", // 16:9 aspect ratio
+  };
+
+  const iframeStyle = {
+    border: "none",
+    position: "absolute",
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100%",
+    visibility: "hidden", // Hides the video but keeps the audio playing
+  };
   return (
     <Fragment>
       {!flowers && (
@@ -43,44 +59,12 @@ const Home = () => {
         </div>
       )}
       {flowers && <FloresAmarillas />}
-      <iframe
-        width="100%"
-        height="166"
-        scrolling="no"
-        frameBorder="no"
-        allow="autoplay"
-        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/24394400&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
-      ></iframe>
-
-      <div
-        style={{
-          fontSize: "10px",
-          color: "#cccccc",
-          lineBreak: "anywhere",
-          wordBreak: "normal",
-          overflow: "hidden",
-          whiteSpace: "nowrap",
-          textOverflow: "ellipsis",
-          fontFamily:
-            "Interstate, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Garuda, Verdana, Tahoma, sans-serif",
-          fontWeight: 100,
-        }}
-      >
-        <a
-          href="https://soundcloud.com/shelseashels"
-          title="shelseashels"
-          style={{ color: "#cccccc", textDecoration: "none" }}
-        >
-          shelseashels
-        </a>{" "}
-        ·{" "}
-        <a
-          href="https://soundcloud.com/shelseashels/floricienta-flores-amarillas"
-          title="Floricienta - flores amarillas"
-          style={{ color: "#cccccc", textDecoration: "none" }}
-        >
-          Floricienta - flores amarillas
-        </a>
+      <div style={containerStyle}>
+        <iframe
+          src="https://www.youtube.com/embed/S7gMzYqXIZc?controls=0&autoplay=1&mute=0"
+          style={iframeStyle}
+          allow="autoplay"
+        ></iframe>
       </div>
     </Fragment>
   );
