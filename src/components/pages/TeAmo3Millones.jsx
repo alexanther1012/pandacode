@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid2";
+import { Link as ScrollLink } from "react-scroll";
 import mundo from "../../img/mundo.png";
 import tresmilloness from "../../img/3millones.jpg";
 import todotodo from "../../img/todotodo.jpg";
@@ -89,14 +90,11 @@ const TeAmo3Millones = () => {
             como soy, todo cursi cursi, que quiera demostrar todo todo lo que
             siento por ti que es muchisisisisisimo, Sabes que tanto
             <div id="button-regresar" className="button-regresar">
-              <Button
-                href="#te-amo-3millones"
-                variant="contained"
-                color="primary"
-                sx={{ mt: 2 }}
-              >
-                Da clic aqui....
-              </Button>
+              <ScrollLink to="te-amo-3millones" smooth={true} duration={500}>
+                <Button variant="contained" color="primary" sx={{ mt: 2 }}>
+                  Da clic aqui....
+                </Button>
+              </ScrollLink>
             </div>
             <br />
             <br />
@@ -189,14 +187,11 @@ const TeAmo3Millones = () => {
       <div style={{ height: "1600px" }}></div>
       <div id="te-amo-3millones">
         <div id="button-regresar-te-amo-3millones" className="button-regresar">
-          <Button
-            href="#button-regresar"
-            variant="contained"
-            color="primary"
-            sx={{ mt: 2 }}
-          >
-            Da clic aqui para regresar....
-          </Button>
+          <ScrollLink to="button-regresar" smooth={true} duration={500}>
+            <Button variant="contained" color="primary" sx={{ mt: 2 }}>
+              Da clic aqui para regresar....
+            </Button>
+          </ScrollLink>
         </div>
         <br />
         <img style={{ width: "100%" }} src={tresmilloness} alt="tresmillones" />
