@@ -31,21 +31,19 @@ const Contador = (props) => {
     switch (type) {
       case "complete":
         return (
-          <p>
-            {count.dias +
-              " Dias " +
-              count.horas +
-              " horas " +
-              count.minutos +
-              " minutos " +
-              count.segundos +
-              " segundos "}
-          </p>
+          count.dias +
+          " Dias " +
+          count.horas +
+          " horas " +
+          count.minutos +
+          " minutos " +
+          count.segundos +
+          " segundos "
         );
       case "moments":
-        return (
-          <p className="">{count.moments.toLocaleString() + " momentos"}</p>
-        );
+        return count.moments.toLocaleString() + " momentos";
+      default:
+        return <p>Loading...</p>;
     }
   };
 
@@ -56,7 +54,7 @@ const Contador = (props) => {
       clearInterval(timer);
     };
   });
-  return <div>{getType(type)}</div>;
+  return getType(type);
 };
 
 Contador.propTypes = {
