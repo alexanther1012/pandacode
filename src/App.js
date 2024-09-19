@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route, Navigate } from "react-router-dom"; // Added Navigate
+import { Routes, Route, Navigate } from "react-router-dom";
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 
@@ -25,9 +25,8 @@ const App = () => {
       <div className="app-body" style={{ paddingTop: "4rem" }}>
         <Routes>
           <Route path="/" element={<Layout />}>
-            <Route index element={<Navigate to="/home" replace />} />{" "}
-            {/* Redirect / to /home */}
-            <Route path="/home" element={<Home />} /> {/* Add the home route */}
+            <Route index element={<Navigate to="/home" replace />} />
+            <Route path="/home" element={<Home />} />
             <Route path="/boda-civil" element={<BodaCivil />} />
             <Route path="/te-amo-3-millones" element={<TeAmo3Millones />} />
             <Route path="/flores-amarillas" element={<FloresAmarillas />} />

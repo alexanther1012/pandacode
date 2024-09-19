@@ -6,8 +6,8 @@ const BodaCivil = () => {
   return (
     <div style={videoContainerStyles}>
       <iframe
-        width="560"
-        height="315"
+        width="1280"
+        height="720"
         title="Nuestra boda"
         src={videoUrl}
         frameBorder="0"
