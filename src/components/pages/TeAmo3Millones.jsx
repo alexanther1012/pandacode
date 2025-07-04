@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid2";
@@ -10,11 +10,17 @@ import todotodo from "../../img/todotodo.jpg";
 import Contador from "../contador";
 
 const TeAmo3Millones = () => {
+  const [type, setType] = useState("complete");
   const fields = [];
 
   for (let i = 0; i <= 50; i++) {
     fields.push("mucho mucho mucho mucho mucho mucho mucho");
   }
+
+  const toggleType = () => {
+    setType((prev) => (prev === "complete" ? "years" : "complete"));
+  };
+
   return (
     <Fragment>
       <Grid container spacing={3} justifyContent="center">
@@ -164,7 +170,7 @@ const TeAmo3Millones = () => {
         <Grid size={2} />
         <Grid size={8}>
           <Typography variant="h1" gutterBottom>
-            <Contador type="complete" startDate={"2017-02-04"} />
+            <Contador type={type} startDate={"2017-02-04"} />
           </Typography>
         </Grid>
         <Grid size={2} />
@@ -175,12 +181,28 @@ const TeAmo3Millones = () => {
           </Typography>
         </Grid>
         <Grid size={2} />
-
         <Grid size={2} />
         <Grid size={8}>
           <Typography variant="h1" gutterBottom>
-            <Contador type="complete" startDate={"2017-07-04"} />
+            <Contador type={type} startDate={"2017-07-04"} />
           </Typography>
+        </Grid>
+        <Grid size={2} />
+      </Grid>
+      <Grid>
+        <Grid size={2} />
+        <Grid size={8}>
+          <div className="button-switch-count">
+            <Button
+              variant="contained"
+              color="primary"
+              sx={{ mt: 2 }}
+              onClick={toggleType}
+            >
+              Quieres saber cuanto es en{" "}
+              <span>{type === "years" ? "dias" : "años"}</span>
+            </Button>
+          </div>
         </Grid>
         <Grid size={2} />
       </Grid>

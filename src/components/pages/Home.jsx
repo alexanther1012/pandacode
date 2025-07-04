@@ -2,9 +2,11 @@ import React, { Fragment, useState } from "react";
 import Button from "@mui/material/Button";
 import FloresAmarillas from "./FloresAmarillas";
 import WordByWordText from "../utilities/WordByWordText";
+import SoundCloudPlayer from "../SoundCloudPlayer";
 
 const Home = () => {
   const [flowers, setFlowers] = useState(false);
+  const [autoplayAllowed, setAutoplayAllowed] = useState(false);
   const mensajito =
     "Tal vez no sea algo muy grande, pero queria darte un pequeño detalle, y recordarte lo mucho que te amo. Tu eres esa persona que hace mis dias mas lindos y que dia tras dia haces que me enamore mas de ti. eres esa personita con la que quiero pasar dia tras dias hasta el fin de mi vida, hasta que seamos viejitos, y despues de esta vida tambien. Tu te mereces esto y mucho mucho mas pues eres una maravillosa persona, te admiro mucho y me haces feliz todos los dias. Gracias por estar a mi lado y ser esa maravillosa persona y por darme tanto amor.";
   const containerStyle = {
@@ -14,15 +16,10 @@ const Home = () => {
     paddingBottom: "56.25%", // 16:9 aspect ratio
   };
 
-  const iframeStyle = {
-    border: "none",
-    position: "absolute",
-    top: 0,
-    left: 0,
-    width: "100%",
-    height: "100%",
-    visibility: "hidden", // Hides the video but keeps the audio playing
+  const handleAllowAutoplay = () => {
+    setAutoplayAllowed(true);
   };
+
   return (
     <Fragment>
       {!flowers && (
@@ -58,7 +55,10 @@ const Home = () => {
             variant="contained"
             color="primary"
             className="button"
-            onClick={() => setFlowers(!flowers)}
+            onClick={() => {
+              setFlowers(!flowers);
+              handleAllowAutoplay();
+            }}
           >
             Haz click aqui
           </Button>
@@ -66,11 +66,7 @@ const Home = () => {
       )}
       {flowers && <FloresAmarillas />}
       <div style={containerStyle}>
-        <iframe
-          src="https://www.youtube.com/embed/S7gMzYqXIZc?controls=0&autoplay=1&mute=0"
-          style={iframeStyle}
-          allow="autoplay"
-        ></iframe>
+        {autoplayAllowed && <SoundCloudPlayer />}
       </div>
     </Fragment>
   );

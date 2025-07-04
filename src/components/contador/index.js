@@ -1,65 +1,95 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import PropTypes from "prop-types";
 import moment from "moment";
 
-const Contador = (props) => {
-  const { startDate, type } = props;
-  const startDateFormated = moment(startDate);
+const Contador = ({ startDate, type }) => {
+  const startMoment = moment(startDate);
   const [count, setCount] = useState({
-    dias: 0,
-    horas: 0,
-    minutos: 0,
-    segundos: 0,
-    moments: 0,
+    years: 0,
+    months: 0,
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+    totalSeconds: 0,
   });
-
-  const getClock = () => {
-    let enddate = moment();
-
-    setCount({
-      moments: getDiff(startDateFormated, enddate, "seconds"),
-      dias: getDiff(startDateFormated, enddate, "days"),
-      horas: moment().hour(),
-      minutos: moment().minute(),
-      segundos: moment().second(),
-    });
-  };
-
-  const getDiff = (start, end, format) => end.diff(start, format);
-
-  const getType = (type) => {
-    switch (type) {
-      case "complete":
-        return (
-          count.dias +
-          " Dias " +
-          count.horas +
-          " horas " +
-          count.minutos +
-          " minutos " +
-          count.segundos +
-          " segundos "
-        );
-      case "moments":
-        return count.moments.toLocaleString() + " momentos";
-      default:
-        return <p>Loading...</p>;
-    }
-  };
 
   useEffect(() => {
-    const timer = setInterval(() => getClock(), 1000);
+    const update = () => {
+      const now = moment();
+      const totalSeconds = now.diff(startMoment, "seconds");
 
-    return () => {
-      clearInterval(timer);
+      const temp = startMoment.clone();
+
+      const years = now.diff(temp, "years");
+      temp.add(years, "years");
+
+      const months = now.diff(temp, "months");
+      temp.add(months, "months");
+
+      const days = now.diff(temp, "days");
+      temp.add(days, "days");
+
+      const hours = now.diff(temp, "hours");
+      temp.add(hours, "hours");
+
+      const minutes = now.diff(temp, "minutes");
+      temp.add(minutes, "minutes");
+
+      const seconds = now.diff(temp, "seconds");
+
+      setCount({
+        years,
+        months,
+        days,
+        hours,
+        minutes,
+        seconds,
+        totalSeconds,
+      });
     };
-  });
-  return getType(type);
+
+    update();
+    const timer = setInterval(update, 1000);
+    return () => clearInterval(timer);
+  }, [startMoment]);
+
+  if (type === "moments") {
+    return <span>{count.totalSeconds.toLocaleString()} momentos</span>;
+  }
+
+  if (type === "years") {
+    return (
+      <Fragment>
+        {count.years > 0 && <span>{count.years} años </span>}
+        {count.months > 0 && <span>{count.months} meses </span>}
+        {count.days > 0 && <span>{count.days} días </span>}
+        {count.hours > 0 && <span>{count.hours} horas </span>}
+        {count.minutes > 0 && <span>{count.minutes} minutos </span>}
+        {count.seconds > 0 && <span>{count.seconds} segundos</span>}
+      </Fragment>
+    );
+  }
+
+  if (type === "complete") {
+    const totalDays = moment().diff(startMoment, "days");
+    return (
+      <Fragment>
+        {totalDays > 0 && <span>{totalDays} días </span>}
+        {count.hours > 0 && <span>{count.hours} horas </span>}
+        {count.minutes > 0 && <span>{count.minutes} minutos </span>}
+        {count.seconds > 0 && <span>{count.seconds} segundos</span>}
+      </Fragment>
+    );
+  }
+
+  return <span>Loading...</span>;
 };
 
 Contador.propTypes = {
   type: PropTypes.string.isRequired,
-  startDate: PropTypes.number.isRequired,
+  startDate: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Date)])
+    .isRequired,
 };
 
 export default Contador;
