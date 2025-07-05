@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/pandacode/static/css/main.62a6d993.css",
-    "main.js": "/pandacode/static/js/main.7a94442e.js",
+    "main.css": "/pandacode/static/css/main.b1274883.css",
+    "main.js": "/pandacode/static/js/main.5b62f847.js",
     "static/media/collage.jpg": "/pandacode/static/media/collage.40056f967e29efe2b9c5.jpg",
     "static/media/panda.png": "/pandacode/static/media/panda.a41ea9ed3122f3ed7afa.png",
     "static/media/mundo.png": "/pandacode/static/media/mundo.d4d6a727297009643aa8.png",
     "static/media/3millones.jpg": "/pandacode/static/media/3millones.f6d271fc1554a69b28bb.jpg",
     "static/media/todotodo.jpg": "/pandacode/static/media/todotodo.f3b58e1d65af8ed5b1f4.jpg",
     "index.html": "/pandacode/index.html",
-    "main.62a6d993.css.map": "/pandacode/static/css/main.62a6d993.css.map",
-    "main.7a94442e.js.map": "/pandacode/static/js/main.7a94442e.js.map"
+    "main.b1274883.css.map": "/pandacode/static/css/main.b1274883.css.map",
+    "main.5b62f847.js.map": "/pandacode/static/js/main.5b62f847.js.map"
   },
   "entrypoints": [
-    "static/css/main.62a6d993.css",
-    "static/js/main.7a94442e.js"
+    "static/css/main.b1274883.css",
+    "static/js/main.5b62f847.js"
   ]
 }
