@@ -3,6 +3,7 @@
 @import "components/_appFonts.scss";
 @import "components/_appLogo.scss";
 @import "components/_appBackground.scss";
+@import "components/_appFooter.scss";
 @import "_home.scss";
 
 // all customs
@@ -43,8 +44,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh; /* Full viewport height */
-  width: 100vw; /* Full viewport width */
+  // height: 35vh; /* Full viewport height */
+  width: 35vw; /* Full viewport width */
   text-align: center;
 }
 

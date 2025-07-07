@@ -1,452 +1,86 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
+import Button from "@mui/material/Button";
+import WordByWordText from "../utilities/WordByWordText";
+import SoundCloudPlayer from "../SoundCloudPlayer";
+import Flores from "./Flores";
 
 const FloresAmarillas = () => {
+  const [flowers, setFlowers] = useState(false);
+  const [autoplayAllowed, setAutoplayAllowed] = useState(false);
+  const mensajito =
+    "Tal vez no sea algo muy grande, pero queria darte un pequeño detalle, y recordarte lo mucho que te amo. Tu eres esa persona que hace mis dias mas lindos y que dia tras dia haces que me enamore mas de ti. eres esa personita con la que quiero pasar dia tras dias hasta el fin de mi vida, hasta que seamos viejitos, y despues de esta vida tambien. Tu te mereces esto y mucho mucho mas pues eres una maravillosa persona, te admiro mucho y me haces feliz todos los dias. Gracias por estar a mi lado y ser esa maravillosa persona y por darme tanto amor.";
+  const containerStyle = {
+    position: "relative",
+    height: 0,
+    overflow: "hidden",
+    paddingBottom: "56.25%", // 16:9 aspect ratio
+  };
+
+  const handleAllowAutoplay = () => {
+    setAutoplayAllowed(true);
+  };
+
   return (
     <Fragment>
-      <div className="night"></div>
-      <div className="flowers">
-        <div className="flower flower--1">
-          <div className="flower__leafs flower__leafs--1">
-            <div className="flower__leaf flower__leaf--1"></div>
-            <div className="flower__leaf flower__leaf--2"></div>
-            <div className="flower__leaf flower__leaf--3"></div>
-            <div className="flower__leaf flower__leaf--4"></div>
-            <div className="flower__white-circle"></div>
-
-            <div className="flower__light flower__light--1"></div>
-            <div className="flower__light flower__light--2"></div>
-            <div className="flower__light flower__light--3"></div>
-            <div className="flower__light flower__light--4"></div>
-            <div className="flower__light flower__light--5"></div>
-            <div className="flower__light flower__light--6"></div>
-            <div className="flower__light flower__light--7"></div>
-            <div className="flower__light flower__light--8"></div>
+      {!flowers && (
+        <div className="centered-container">
+          <div className="greetings">
+            <span>H</span>
+            <span>O</span>
+            <span>L</span>
+            <span>A</span>
           </div>
-          <div className="flower__line">
-            <div className="flower__line__leaf flower__line__leaf--1"></div>
-            <div className="flower__line__leaf flower__line__leaf--2"></div>
-            <div className="flower__line__leaf flower__line__leaf--3"></div>
-            <div className="flower__line__leaf flower__line__leaf--4"></div>
-            <div className="flower__line__leaf flower__line__leaf--5"></div>
-            <div className="flower__line__leaf flower__line__leaf--6"></div>
+          <div className="greetings">
+            <span>M</span>
+            <span>I</span>
           </div>
+          <div className="greetings">
+            <span>A</span>
+            <span>M</span>
+            <span>O</span>
+            <span>R</span>
+            <span>O</span>
+            <span>S</span>
+            <span>I</span>
+            <span>T</span>
+            <span>A</span>
+          </div>
+          <div className="description">
+            <span>Tengo un regalo muy especial para ti!!</span>
+          </div>
+          {!flowers && (
+            <WordByWordText text={mensajito} delay={300} variant="h4" />
+          )}
+          <Button
+            variant="contained"
+            color="primary"
+            className="button"
+            onClick={() => {
+              setFlowers(!flowers);
+              handleAllowAutoplay();
+            }}
+          >
+            Haz click aqui
+          </Button>
         </div>
-
-        <div className="flower flower--2">
-          <div className="flower__leafs flower__leafs--2">
-            <div className="flower__leaf flower__leaf--1"></div>
-            <div className="flower__leaf flower__leaf--2"></div>
-            <div className="flower__leaf flower__leaf--3"></div>
-            <div className="flower__leaf flower__leaf--4"></div>
-            <div className="flower__white-circle"></div>
-
-            <div className="flower__light flower__light--1"></div>
-            <div className="flower__light flower__light--2"></div>
-            <div className="flower__light flower__light--3"></div>
-            <div className="flower__light flower__light--4"></div>
-            <div className="flower__light flower__light--5"></div>
-            <div className="flower__light flower__light--6"></div>
-            <div className="flower__light flower__light--7"></div>
-            <div className="flower__light flower__light--8"></div>
-          </div>
-          <div className="flower__line">
-            <div className="flower__line__leaf flower__line__leaf--1"></div>
-            <div className="flower__line__leaf flower__line__leaf--2"></div>
-            <div className="flower__line__leaf flower__line__leaf--3"></div>
-            <div className="flower__line__leaf flower__line__leaf--4"></div>
-          </div>
-        </div>
-
-        <div className="flower flower--3">
-          <div className="flower__leafs flower__leafs--3">
-            <div className="flower__leaf flower__leaf--1"></div>
-            <div className="flower__leaf flower__leaf--2"></div>
-            <div className="flower__leaf flower__leaf--3"></div>
-            <div className="flower__leaf flower__leaf--4"></div>
-            <div className="flower__white-circle"></div>
-
-            <div className="flower__light flower__light--1"></div>
-            <div className="flower__light flower__light--2"></div>
-            <div className="flower__light flower__light--3"></div>
-            <div className="flower__light flower__light--4"></div>
-            <div className="flower__light flower__light--5"></div>
-            <div className="flower__light flower__light--6"></div>
-            <div className="flower__light flower__light--7"></div>
-            <div className="flower__light flower__light--8"></div>
-          </div>
-          <div className="flower__line">
-            <div className="flower__line__leaf flower__line__leaf--1"></div>
-            <div className="flower__line__leaf flower__line__leaf--2"></div>
-            <div className="flower__line__leaf flower__line__leaf--3"></div>
-            <div className="flower__line__leaf flower__line__leaf--4"></div>
-          </div>
-        </div>
-        <div className="flower flower--4">
-          <div className="flower__leafs flower__leafs--3">
-            <div className="flower__leaf flower__leaf--1"></div>
-            <div className="flower__leaf flower__leaf--2"></div>
-            <div className="flower__leaf flower__leaf--3"></div>
-            <div className="flower__leaf flower__leaf--4"></div>
-            <div className="flower__white-circle"></div>
-
-            <div className="flower__light flower__light--1"></div>
-            <div className="flower__light flower__light--2"></div>
-            <div className="flower__light flower__light--3"></div>
-            <div className="flower__light flower__light--4"></div>
-            <div className="flower__light flower__light--5"></div>
-            <div className="flower__light flower__light--6"></div>
-            <div className="flower__light flower__light--7"></div>
-            <div className="flower__light flower__light--8"></div>
-          </div>
-          <div className="flower__line">
-            <div className="flower__line__leaf flower__line__leaf--1"></div>
-            <div className="flower__line__leaf flower__line__leaf--2"></div>
-            <div className="flower__line__leaf flower__line__leaf--3"></div>
-            <div className="flower__line__leaf flower__line__leaf--4"></div>
-          </div>
-        </div>
-
-        <div className="grow-ans grow-ans-style-1d2s">
-          <div className="flower__g-long">
-            <div className="flower__g-long__top"></div>
-            <div className="flower__g-long__bottom"></div>
-          </div>
-        </div>
-
-        <div className="growing-grass">
-          <div className="flower__grass flower__grass--1">
-            <div className="flower__grass--top"></div>
-            <div className="flower__grass--bottom"></div>
-            <div className="flower__grass__leaf flower__grass__leaf--1"></div>
-            <div className="flower__grass__leaf flower__grass__leaf--2"></div>
-            <div className="flower__grass__leaf flower__grass__leaf--3"></div>
-            <div className="flower__grass__leaf flower__grass__leaf--4"></div>
-            <div className="flower__grass__leaf flower__grass__leaf--5"></div>
-            <div className="flower__grass__leaf flower__grass__leaf--6"></div>
-            <div className="flower__grass__leaf flower__grass__leaf--7"></div>
-            <div className="flower__grass__leaf flower__grass__leaf--8"></div>
-            <div className="flower__grass__overlay"></div>
-          </div>
-        </div>
-
-        <div className="growing-grass">
-          <div className="flower__grass flower__grass--2">
-            <div className="flower__grass--top"></div>
-            <div className="flower__grass--bottom"></div>
-            <div className="flower__grass__leaf flower__grass__leaf--1"></div>
-            <div className="flower__grass__leaf flower__grass__leaf--2"></div>
-            <div className="flower__grass__leaf flower__grass__leaf--3"></div>
-            <div className="flower__grass__leaf flower__grass__leaf--4"></div>
-            <div className="flower__grass__leaf flower__grass__leaf--5"></div>
-            <div className="flower__grass__leaf flower__grass__leaf--6"></div>
-            <div className="flower__grass__leaf flower__grass__leaf--7"></div>
-            <div className="flower__grass__leaf flower__grass__leaf--8"></div>
-            <div className="flower__grass__overlay"></div>
-          </div>
-        </div>
-
-        <div className="grow-ans grow-ans-style-2d4s">
-          <div className="flower__g-right flower__g-right--1">
-            <div className="leaf"></div>
-          </div>
-        </div>
-
-        <div className="grow-ans grow-ans-style-2d8s">
-          <div className="flower__g-right flower__g-right--2">
-            <div className="leaf"></div>
-          </div>
-        </div>
-
-        <div className="grow-ans grow-ans-style-2d8s">
-          <div className="flower__g-front">
-            <div className="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--1">
-              <div className="flower__g-front__leaf"></div>
-            </div>
-            <div className="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--2">
-              <div className="flower__g-front__leaf"></div>
-            </div>
-            <div className="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--3">
-              <div className="flower__g-front__leaf"></div>
-            </div>
-            <div className="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--4">
-              <div className="flower__g-front__leaf"></div>
-            </div>
-            <div className="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--5">
-              <div className="flower__g-front__leaf"></div>
-            </div>
-            <div className="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--6">
-              <div className="flower__g-front__leaf"></div>
-            </div>
-            <div className="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--7">
-              <div className="flower__g-front__leaf"></div>
-            </div>
-            <div className="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--8">
-              <div className="flower__g-front__leaf"></div>
-            </div>
-            <div className="flower__g-front__line"></div>
-          </div>
-        </div>
-
-        <div className="grow-ans grow-ans-style-3d2s">
-          <div className="flower__g-fr">
-            <div className="leaf"></div>
-            <div className="flower__g-fr__leaf flower__g-fr__leaf--1"></div>
-            <div className="flower__g-fr__leaf flower__g-fr__leaf--2"></div>
-            <div className="flower__g-fr__leaf flower__g-fr__leaf--3"></div>
-            <div className="flower__g-fr__leaf flower__g-fr__leaf--4"></div>
-            <div className="flower__g-fr__leaf flower__g-fr__leaf--5"></div>
-            <div className="flower__g-fr__leaf flower__g-fr__leaf--6"></div>
-            <div className="flower__g-fr__leaf flower__g-fr__leaf--7"></div>
-            <div className="flower__g-fr__leaf flower__g-fr__leaf--8"></div>
-          </div>
-        </div>
-
-        <div className="long-g long-g--0">
-          <div className="grow-ans grow-ans-style-3s">
-            <div className="leaf leaf--0"></div>
-          </div>
-          <div className="grow-ans grow-ans-style-2d2s">
-            <div className="leaf leaf--1"></div>
-          </div>
-          <div className="grow-ans grow-ans-style-3d4s">
-            <div className="leaf leaf--2"></div>
-          </div>
-          <div className="grow-ans grow-ans-style-3d6s">
-            <div className="leaf leaf--3"></div>
-          </div>
-        </div>
-
-        <div className="long-g long-g--1">
-          <div className="grow-ans grow-ans-style-3d6s">
-            <div className="leaf leaf--0"></div>
-          </div>
-          <div className="grow-ans grow-ans-style-3d8s">
-            <div className="leaf leaf--1"></div>
-          </div>
-          <div className="grow-ans grow-ans-style-4s">
-            <div className="leaf leaf--2"></div>
-          </div>
-          <div className="grow-ans grow-ans-style-4d2s">
-            <div className="leaf leaf--3"></div>
-          </div>
-        </div>
-
-        <div className="long-g long-g--2">
-          <div className="grow-ans grow-ans-style-4s">
-            <div className="leaf leaf--0"></div>
-          </div>
-          <div className="grow-ans grow-ans-style-4d2s">
-            <div className="leaf leaf--1"></div>
-          </div>
-          <div className="grow-ans grow-ans-style-4d4s">
-            <div className="leaf leaf--2"></div>
-          </div>
-          <div className="grow-ans grow-ans-style-4d6s">
-            <div className="leaf leaf--3"></div>
-          </div>
-        </div>
-
-        <div className="long-g long-g--3">
-          <div className="grow-ans grow-ans-style-4s">
-            <div className="leaf leaf--0"></div>
-          </div>
-          <div className="grow-ans grow-ans-style-4d2s">
-            <div className="leaf leaf--1"></div>
-          </div>
-          <div className="grow-ans grow-ans-style-3s">
-            <div className="leaf leaf--2"></div>
-          </div>
-          <div className="grow-ans grow-ans-style-3d6s">
-            <div className="leaf leaf--3"></div>
-          </div>
-        </div>
-
-        <div className="long-g long-g--4">
-          <div className="grow-ans grow-ans-style-4s">
-            <div className="leaf leaf--0"></div>
-          </div>
-          <div className="grow-ans grow-ans-style-4d2s">
-            <div className="leaf leaf--1"></div>
-          </div>
-          <div className="grow-ans grow-ans-style-3s">
-            <div className="leaf leaf--2"></div>
-          </div>
-          <div className="grow-ans grow-ans-style-3d6s">
-            <div className="leaf leaf--3"></div>
-          </div>
-        </div>
-
-        <div className="long-g long-g--5">
-          <div className="grow-ans grow-ans-style-4s">
-            <div className="leaf leaf--0"></div>
-          </div>
-          <div className="grow-ans grow-ans-style-4d2s">
-            <div className="leaf leaf--1"></div>
-          </div>
-          <div className="grow-ans grow-ans-style-3s">
-            <div className="leaf leaf--2"></div>
-          </div>
-          <div className="grow-ans grow-ans-style-3d6s">
-            <div className="leaf leaf--3"></div>
-          </div>
-        </div>
-
-        <div className="long-g long-g--6">
-          <div className="grow-ans grow-ans-style-4d2s">
-            <div className="leaf leaf--0"></div>
-          </div>
-          <div className="grow-ans grow-ans-style-4d4s">
-            <div className="leaf leaf--1"></div>
-          </div>
-          <div className="grow-ans grow-ans-style-4d6s">
-            <div className="leaf leaf--2"></div>
-          </div>
-          <div className="grow-ans grow-ans-style-4d8s">
-            <div className="leaf leaf--3"></div>
-          </div>
-        </div>
-
-        <div className="long-g long-g--7">
-          <div className="grow-ans grow-ans-style-3s">
-            <div className="leaf leaf--0"></div>
-          </div>
-          <div className="grow-ans grow-ans-style-3d2s">
-            <div className="leaf leaf--1"></div>
-          </div>
-          <div className="grow-ans grow-ans-style-3d5s">
-            <div className="leaf leaf--2"></div>
-          </div>
-          <div className="grow-ans grow-ans-style-3d6s">
-            <div className="leaf leaf--3"></div>
-          </div>
-        </div>
+      )}
+      {flowers && <Flores />}
+      <div style={containerStyle}>
+        {autoplayAllowed && (
+          <SoundCloudPlayer
+            src={
+              "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/24394400&color=%231e1e1c&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
+            }
+            title={"Floricienta - flores amarillas"}
+            author={"shelseashels"}
+            profile={"https://soundcloud.com/shelseashels"}
+            href={
+              "https://soundcloud.com/shelseashels/floricienta-flores-amarillas"
+            }
+          />
+        )}
       </div>
-      <script src="../../main.js"></script>
-      <div className="bubbles">
-        <div className="bubble">
-          <svg className="heart" viewBox="0 0 32 32">
-            <title>heart22</title>
-            <path d="M23.6 2c-3.363 0-6.258 2.736-7.599 5.594-1.342-2.858-4.237-5.594-7.601-5.594-4.637 0-8.4 3.764-8.4 8.401 0 9.433 9.516 11.906 16.001 21.232 6.13-9.268 15.999-12.1 15.999-21.232 0-4.637-3.763-8.401-8.4-8.401z"></path>
-          </svg>
-        </div>
-        <div className="bubble">
-          <svg className="heart" viewBox="0 0 32 32">
-            <title>heart22</title>
-            <path d="M23.6 2c-3.363 0-6.258 2.736-7.599 5.594-1.342-2.858-4.237-5.594-7.601-5.594-4.637 0-8.4 3.764-8.4 8.401 0 9.433 9.516 11.906 16.001 21.232 6.13-9.268 15.999-12.1 15.999-21.232 0-4.637-3.763-8.401-8.4-8.401z"></path>
-          </svg>
-        </div>
-        <div className="bubble">
-          <svg className="heart" viewBox="0 0 32 32">
-            <title>heart22</title>
-            <path d="M23.6 2c-3.363 0-6.258 2.736-7.599 5.594-1.342-2.858-4.237-5.594-7.601-5.594-4.637 0-8.4 3.764-8.4 8.401 0 9.433 9.516 11.906 16.001 21.232 6.13-9.268 15.999-12.1 15.999-21.232 0-4.637-3.763-8.401-8.4-8.401z"></path>
-          </svg>
-        </div>
-        <div className="bubble">
-          <svg className="heart" viewBox="0 0 32 32">
-            <title>heart22</title>
-            <path d="M23.6 2c-3.363 0-6.258 2.736-7.599 5.594-1.342-2.858-4.237-5.594-7.601-5.594-4.637 0-8.4 3.764-8.4 8.401 0 9.433 9.516 11.906 16.001 21.232 6.13-9.268 15.999-12.1 15.999-21.232 0-4.637-3.763-8.401-8.4-8.401z"></path>
-          </svg>
-        </div>
-        <div className="bubble">
-          <svg className="heart" viewBox="0 0 32 32">
-            <title>heart22</title>
-            <path d="M23.6 2c-3.363 0-6.258 2.736-7.599 5.594-1.342-2.858-4.237-5.594-7.601-5.594-4.637 0-8.4 3.764-8.4 8.401 0 9.433 9.516 11.906 16.001 21.232 6.13-9.268 15.999-12.1 15.999-21.232 0-4.637-3.763-8.401-8.4-8.401z"></path>
-          </svg>
-        </div>
-        <div className="bubble">
-          <svg className="heart" viewBox="0 0 32 32">
-            <title>heart22</title>
-            <path d="M23.6 2c-3.363 0-6.258 2.736-7.599 5.594-1.342-2.858-4.237-5.594-7.601-5.594-4.637 0-8.4 3.764-8.4 8.401 0 9.433 9.516 11.906 16.001 21.232 6.13-9.268 15.999-12.1 15.999-21.232 0-4.637-3.763-8.401-8.4-8.401z"></path>
-          </svg>
-        </div>
-        <div className="bubble">
-          <svg className="heart" viewBox="0 0 32 32">
-            <title>heart22</title>
-            <path d="M23.6 2c-3.363 0-6.258 2.736-7.599 5.594-1.342-2.858-4.237-5.594-7.601-5.594-4.637 0-8.4 3.764-8.4 8.401 0 9.433 9.516 11.906 16.001 21.232 6.13-9.268 15.999-12.1 15.999-21.232 0-4.637-3.763-8.401-8.4-8.401z"></path>
-          </svg>
-        </div>
-        <div className="bubble">
-          <svg className="heart" viewBox="0 0 32 32">
-            <title>heart22</title>
-            <path d="M23.6 2c-3.363 0-6.258 2.736-7.599 5.594-1.342-2.858-4.237-5.594-7.601-5.594-4.637 0-8.4 3.764-8.4 8.401 0 9.433 9.516 11.906 16.001 21.232 6.13-9.268 15.999-12.1 15.999-21.232 0-4.637-3.763-8.401-8.4-8.401z"></path>
-          </svg>
-        </div>
-        <div className="bubble">
-          <svg className="heart" viewBox="0 0 32 32">
-            <title>heart22</title>
-            <path d="M23.6 2c-3.363 0-6.258 2.736-7.599 5.594-1.342-2.858-4.237-5.594-7.601-5.594-4.637 0-8.4 3.764-8.4 8.401 0 9.433 9.516 11.906 16.001 21.232 6.13-9.268 15.999-12.1 15.999-21.232 0-4.637-3.763-8.401-8.4-8.401z"></path>
-          </svg>
-        </div>
-        <div className="bubble">
-          <svg className="heart" viewBox="0 0 32 32">
-            <title>heart22</title>
-            <path d="M23.6 2c-3.363 0-6.258 2.736-7.599 5.594-1.342-2.858-4.237-5.594-7.601-5.594-4.637 0-8.4 3.764-8.4 8.401 0 9.433 9.516 11.906 16.001 21.232 6.13-9.268 15.999-12.1 15.999-21.232 0-4.637-3.763-8.401-8.4-8.401z"></path>
-          </svg>
-        </div>
-        <div className="bubble">
-          <svg className="heart" viewBox="0 0 32 32">
-            <title>heart22</title>
-            <path d="M23.6 2c-3.363 0-6.258 2.736-7.599 5.594-1.342-2.858-4.237-5.594-7.601-5.594-4.637 0-8.4 3.764-8.4 8.401 0 9.433 9.516 11.906 16.001 21.232 6.13-9.268 15.999-12.1 15.999-21.232 0-4.637-3.763-8.401-8.4-8.401z"></path>
-          </svg>
-        </div>
-        <div className="bubble">
-          <svg className="heart" viewBox="0 0 32 32">
-            <title>heart22</title>
-            <path d="M23.6 2c-3.363 0-6.258 2.736-7.599 5.594-1.342-2.858-4.237-5.594-7.601-5.594-4.637 0-8.4 3.764-8.4 8.401 0 9.433 9.516 11.906 16.001 21.232 6.13-9.268 15.999-12.1 15.999-21.232 0-4.637-3.763-8.401-8.4-8.401z"></path>
-          </svg>
-        </div>
-        <div className="bubble">
-          <svg className="heart" viewBox="0 0 32 32">
-            <title>heart22</title>
-            <path d="M23.6 2c-3.363 0-6.258 2.736-7.599 5.594-1.342-2.858-4.237-5.594-7.601-5.594-4.637 0-8.4 3.764-8.4 8.401 0 9.433 9.516 11.906 16.001 21.232 6.13-9.268 15.999-12.1 15.999-21.232 0-4.637-3.763-8.401-8.4-8.401z"></path>
-          </svg>
-        </div>
-        <div className="bubble">
-          <svg className="heart" viewBox="0 0 32 32">
-            <title>heart22</title>
-            <path d="M23.6 2c-3.363 0-6.258 2.736-7.599 5.594-1.342-2.858-4.237-5.594-7.601-5.594-4.637 0-8.4 3.764-8.4 8.401 0 9.433 9.516 11.906 16.001 21.232 6.13-9.268 15.999-12.1 15.999-21.232 0-4.637-3.763-8.401-8.4-8.401z"></path>
-          </svg>
-        </div>
-        <div className="bubble">
-          <svg className="heart" viewBox="0 0 32 32">
-            <title>heart22</title>
-            <path d="M23.6 2c-3.363 0-6.258 2.736-7.599 5.594-1.342-2.858-4.237-5.594-7.601-5.594-4.637 0-8.4 3.764-8.4 8.401 0 9.433 9.516 11.906 16.001 21.232 6.13-9.268 15.999-12.1 15.999-21.232 0-4.637-3.763-8.401-8.4-8.401z"></path>
-          </svg>
-        </div>
-        <div className="bubble">
-          <svg className="heart" viewBox="0 0 32 32">
-            <title>heart22</title>
-            <path d="M23.6 2c-3.363 0-6.258 2.736-7.599 5.594-1.342-2.858-4.237-5.594-7.601-5.594-4.637 0-8.4 3.764-8.4 8.401 0 9.433 9.516 11.906 16.001 21.232 6.13-9.268 15.999-12.1 15.999-21.232 0-4.637-3.763-8.401-8.4-8.401z"></path>
-          </svg>
-        </div>
-        <div className="bubble">
-          <svg className="heart" viewBox="0 0 32 32">
-            <title>heart22</title>
-            <path d="M23.6 2c-3.363 0-6.258 2.736-7.599 5.594-1.342-2.858-4.237-5.594-7.601-5.594-4.637 0-8.4 3.764-8.4 8.401 0 9.433 9.516 11.906 16.001 21.232 6.13-9.268 15.999-12.1 15.999-21.232 0-4.637-3.763-8.401-8.4-8.401z"></path>
-          </svg>
-        </div>
-        <div className="bubble">
-          <svg className="heart" viewBox="0 0 32 32">
-            <title>heart22</title>
-            <path d="M23.6 2c-3.363 0-6.258 2.736-7.599 5.594-1.342-2.858-4.237-5.594-7.601-5.594-4.637 0-8.4 3.764-8.4 8.401 0 9.433 9.516 11.906 16.001 21.232 6.13-9.268 15.999-12.1 15.999-21.232 0-4.637-3.763-8.401-8.4-8.401z"></path>
-          </svg>
-        </div>
-        <div className="bubble">
-          <svg className="heart" viewBox="0 0 32 32">
-            <title>heart22</title>
-            <path d="M23.6 2c-3.363 0-6.258 2.736-7.599 5.594-1.342-2.858-4.237-5.594-7.601-5.594-4.637 0-8.4 3.764-8.4 8.401 0 9.433 9.516 11.906 16.001 21.232 6.13-9.268 15.999-12.1 15.999-21.232 0-4.637-3.763-8.401-8.4-8.401z"></path>
-          </svg>
-        </div>
-        <div className="bubble">
-          <svg className="heart" viewBox="0 0 32 32">
-            <title>heart22</title>
-            <path d="M23.6 2c-3.363 0-6.258 2.736-7.599 5.594-1.342-2.858-4.237-5.594-7.601-5.594-4.637 0-8.4 3.764-8.4 8.401 0 9.433 9.516 11.906 16.001 21.232 6.13-9.268 15.999-12.1 15.999-21.232 0-4.637-3.763-8.401-8.4-8.401z"></path>
-          </svg>
-        </div>
-      </div>
-      <script src="../../main.js"></script>
     </Fragment>
   );
 };
-
 export default FloresAmarillas;

@@ -29,6 +29,9 @@ const Header = () => {
         <Button color="inherit" component={Link} to="/">
           Home
         </Button>
+        <Button color="inherit" component={Link} to="/flores-amarillas">
+          Flores
+        </Button>
         <Button color="inherit" component={Link} to="/boda-civil">
           Nuestra boda civil
         </Button>

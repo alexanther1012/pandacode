@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-const SoundCloudPlayer = ({ src, display }) => {
-  const [iframeSrc] = useState(
-    src ||
-      "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/24394400&color=%231e1e1c&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
-  );
+const SoundCloudPlayer = ({ src, display, title, author, profile, href }) => {
+  const [iframeSrc] = useState(src);
 
   const iframeStyles = {
     width: "100%",
@@ -43,23 +40,23 @@ const SoundCloudPlayer = ({ src, display }) => {
       ></iframe>
       <div style={containerStyles}>
         <a
-          href="https://soundcloud.com/shelseashels"
-          title="shelseashels"
+          href={profile}
+          title={author}
           target="_blank"
           rel="noopener noreferrer"
           style={linkStyles}
         >
-          shelseashels
+          {author}
         </a>{" "}
         ·{" "}
         <a
-          href="https://soundcloud.com/shelseashels/floricienta-flores-amarillas"
-          title="Floricienta - flores amarillas"
+          href={href}
+          title={title}
           target="_blank"
           rel="noopener noreferrer"
           style={linkStyles}
         >
-          Floricienta - flores amarillas
+          {title}
         </a>
       </div>
     </React.Fragment>
@@ -68,6 +65,10 @@ const SoundCloudPlayer = ({ src, display }) => {
 
 SoundCloudPlayer.propTypes = {
   src: PropTypes.string,
+  title: PropTypes.string,
+  author: PropTypes.string,
+  profile: PropTypes.string,
+  href: PropTypes.string,
   display: PropTypes.string,
 };
 
