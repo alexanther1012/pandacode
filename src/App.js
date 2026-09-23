@@ -12,6 +12,7 @@ import BodaCivil from "./components/pages/BodaCivil";
 import TeAmo3Millones from "./components/pages/TeAmo3Millones";
 import FloresAmarillas from "./components/pages/FloresAmarillas";
 import Home from "./components/pages/Home";
+import Aniversario5 from "./components/pages/Aniversario5";
 import NotFound from "./components/pages/NotFound";
 import darkTheme from "./theme";
 
@@ -29,6 +30,7 @@ const App = () => {
           <Route path="/" element={<Layout />}>
             <Route index element={<Navigate to="/home" replace />} />
             <Route path="/home" element={<Home />} />
+            <Route path="/aniversario5" element={<Aniversario5 />} />
             <Route path="/boda-civil" element={<BodaCivil />} />
             <Route path="/te-amo-3-millones" element={<TeAmo3Millones />} />
             <Route path="/flores-amarillas" element={<FloresAmarillas />} />

@@ -61,6 +61,86 @@
   color: #fbff00;
 }
 
+// ── Home landing grid ──────────────────────────────────────────────────────────
+
+.home-landing {
+  padding: 2rem 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+
+  &__title {
+    text-align: center;
+    margin-bottom: 0.5rem !important;
+    color: #fff;
+  }
+
+  &__subtitle {
+    text-align: center;
+    color: #aaa;
+    margin-bottom: 2rem !important;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+// ── Home card ─────────────────────────────────────────────────────────────────
+
+.home-card {
+  background-color: #1a1a1a !important;
+  border: 1px solid #2e2e2e !important;
+  border-radius: 12px !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+
+  &:hover:not(.home-card--coming-soon) {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(251, 255, 0, 0.12) !important;
+    border-color: #fbff00 !important;
+  }
+
+  &__action {
+    height: 100%;
+  }
+
+  &__banner {
+    height: 120px;
+    background: linear-gradient(135deg, #1e1e1e 0%, #2a2a2a 100%);
+    border-bottom: 1px solid #2e2e2e;
+  }
+
+  &__skeleton {
+    height: 120px !important;
+    width: 100% !important;
+    background-color: #2a2a2a !important;
+  }
+
+  &__content {
+    padding: 1rem 1.25rem !important;
+  }
+
+  &__title {
+    color: #fff !important;
+    font-weight: 600 !important;
+    margin-bottom: 0.4rem !important;
+  }
+
+  &__description {
+    color: #888 !important;
+  }
+
+  &--coming-soon {
+    opacity: 0.5;
+    cursor: default;
+
+    .home-card__title {
+      color: #555 !important;
+    }
+  }
+}
+
 .collage-img {
   width: 100%;
 }
