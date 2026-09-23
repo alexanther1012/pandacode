@@ -61,6 +61,19 @@
   color: #fbff00;
 }
 
+.collage-img {
+  width: 100%;
+}
+
+.soundcloud-container {
+  display: flex;
+  position: relative;
+  height: 0;
+  bottom: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%; // 16:9 aspect ratio
+}
+
 /* Estilo para el botón */
 .button button {
   background-color: yellow; /* Fondo amarillo */

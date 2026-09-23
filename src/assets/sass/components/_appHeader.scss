@@ -2,3 +2,18 @@
   height: 50%;
   color: white;
 }
+
+.app-body {
+  padding-top: 4rem;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+}
+
+.header-logo__img {
+  height: 3rem;
+  width: auto;
+  padding: 0.5rem;
+}

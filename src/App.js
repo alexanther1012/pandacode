@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -16,13 +16,15 @@ import NotFound from "./components/pages/NotFound";
 import darkTheme from "./theme";
 
 const App = () => {
-  document.title = "Panda Code";
+  useEffect(() => {
+    document.title = "Panda Code";
+  }, []);
 
   return (
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
       <Header />
-      <div className="app-body" style={{ paddingTop: "4rem" }}>
+      <div className="app-body">
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Navigate to="/home" replace />} />

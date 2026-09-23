@@ -4,20 +4,11 @@ import Grid from "@mui/material/Grid2";
 import WordByWordText from "../utilities/WordByWordText";
 import SoundCloudPlayer from "../SoundCloudPlayer";
 import Collage from "../../img/collage.jpg";
+import { ANNIVERSARY_MESSAGE, SOUNDCLOUD_SRC } from "../../constants/messages";
 
 const Aniversario5 = () => {
   const [visible, setVisible] = useState(false);
   const [autoplayAllowed, setAutoplayAllowed] = useState(false);
-  const mensajito =
-    "Se que tal vez pensaste que se me olvido o que lo tome como un dia cualquiera, pero no no fue asi, porque hoy es un dia muy especial en nuestras vidas hoy hace 8 años y contando  y tal vez unos dias, bueno, tal vez meses, tu sabes nuestra historia mi vida, desde entonces me haz hecho muy muy feliz, haz hecho que este niño loco, unas veces serio, otras veces creo que soy desesperante, otras veces idiatico, pero sabes algo, te amo mucho mucho mucho como no te lo imaginas tanto como las estrellas que estan en el cielo aunque sea de dia y no se vean, pero me haces mucho muy feliz, eres la persona que quiero en mi vida y despues de esta te buscaria tambien en miles de vidas mas. Eres esa personita por la que me esmero a ser mejor persona y por quien quiero hacer cosas imposibles posibles. Te doy gracias por todo y quiero que sigamos cosechando mas momentos juntos, eres mi todo mi vida y espero poder cumplir contigo todos nuestros sueños y llegar a ser viejitos y fantasmitas tambien n.n te amo mucho....";
-  const containerStyle = {
-    display: "flex",
-    position: "relative",
-    height: 0,
-    bottom: 0,
-    overflow: "hidden",
-    paddingBottom: "56.25%", // 16:9 aspect ratio
-  };
 
   const handleAllowAutoplay = () => {
     setAutoplayAllowed(true);
@@ -30,7 +21,7 @@ const Aniversario5 = () => {
   return (
     <Fragment>
       <div className="centered-container">
-        <Grid justifyContent="center">
+        <Grid container justifyContent="center">
           <Grid size={2} />
           <Grid size={8}>
             <div className="greetings">
@@ -57,7 +48,7 @@ const Aniversario5 = () => {
           </Grid>
           <Grid size={2} />
         </Grid>
-        <Grid justifyContent="center">
+        <Grid container justifyContent="center">
           <Grid size={2} />
           <Grid size={8}>
             <div className="description">
@@ -66,7 +57,7 @@ const Aniversario5 = () => {
           </Grid>
           <Grid size={2} />
         </Grid>
-        <Grid justifyContent="center">
+        <Grid container justifyContent="center">
           <Grid size={2} />
           <Grid size={8}>
             <Button
@@ -86,25 +77,31 @@ const Aniversario5 = () => {
             <Fragment>
               <Grid size={2} />
               <Grid size={8}>
-                <WordByWordText text={mensajito} delay={300} variant="h4" />
+                <WordByWordText
+                  text={ANNIVERSARY_MESSAGE}
+                  delay={300}
+                  variant="h4"
+                />
               </Grid>
               <Grid size={2} />
             </Fragment>
           )}
         </Grid>
-        <Grid justifyContent="center">
+        <Grid container justifyContent="center">
           {visible && (
-            <img style={{ width: "100%" }} src={Collage} alt="collage" />
+            <img
+              className="collage-img"
+              src={Collage}
+              alt="Photo collage of our memories together"
+            />
           )}
         </Grid>
       </div>
       <br />
-      <div style={containerStyle}>
+      <div className="soundcloud-container">
         {autoplayAllowed && (
           <SoundCloudPlayer
-            src={
-              "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/438438189&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
-            }
+            src={SOUNDCLOUD_SRC}
             title={"Sebastian Yatra - No Hay Nadie Mas"}
             author={"DJ JeDrian"}
             profile={"https://soundcloud.com/jeschito44"}
