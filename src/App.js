@@ -25,20 +25,18 @@ const App = () => {
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
       <Header />
-      <div className="app-body">
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Navigate to="/home" replace />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/aniversario5" element={<Aniversario5 />} />
-            <Route path="/boda-civil" element={<BodaCivil />} />
-            <Route path="/te-amo-3-millones" element={<TeAmo3Millones />} />
-            <Route path="/flores-amarillas" element={<FloresAmarillas />} />
-            <Route path="/building" element={<Building />} />
-            <Route path="*" element={<NotFound />} />
-          </Route>
-        </Routes>
-      </div>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Navigate to="/home" replace />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/aniversario5" element={<Aniversario5 />} />
+          <Route path="/boda-civil" element={<BodaCivil />} />
+          <Route path="/te-amo-3-millones" element={<TeAmo3Millones />} />
+          <Route path="/flores-amarillas" element={<FloresAmarillas />} />
+          <Route path="/building" element={<Building />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
+      </Routes>
     </ThemeProvider>
   );
 };
